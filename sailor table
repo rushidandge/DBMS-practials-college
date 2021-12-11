@@ -1,0 +1,47 @@
+CREATE TABLE sailors ( sid integer not null, sname varchar(32), 
+rating integer, age number(3,1), 
+CONSTRAINT PK_sailors PRIMARY KEY(sid) );
+
+CREATE TABLE boats (bid integer not null,
+bname varchar(32),
+colour varchar(16));
+
+CREATE TABLE reserves ( sid integer not null,
+bid integer not null, 
+day datetime not null, 
+CONSTRAINT PK_reserves PRIMARY KEY(sid, bid, day),
+FOREIGN KEY(sid) REFERENCES sailors(sid), 
+FOREIGN KEY(bid) REFERENCES boats(bid));
+
+ INSERT INTO sailors 
+ VALUES( '22' , 'Dustin', '7', '45');
+ 
+ INSERT INTO sailors 
+ VALUES('29','Brutus','1','33');
+ 
+ INSERT INTO sailors 
+ VALUES('31', 'Lubber', '8','55.5')
+ 
+ INSERT INTO sailors 
+ VALUES('32', 'Andy', '8','25.5')
+ 
+ INSERT INTO sailors 
+ VALUES('58', 'Rusty', '10','35')
+ 
+ INSERT INTO sailors 
+ VALUES('64', 'Horatio', '7','35')
+ 
+ INSERT INTO sailors
+ VALUES('71', 'Zorba', '10','16')
+ 
+ INSERT INTO sailors
+ VALUES('74', 'Horatio', '9','40')
+ 
+ INSERT INTO sailors
+ VALUES('85', 'Art', '3','25.5')
+ 
+ INSERT INTO sailors
+ VALUES('95', 'Bob', '3','63.5')
+ 
+ SELECT * FROM sailors
+ 
